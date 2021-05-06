@@ -1,0 +1,350 @@
+{
+    "name": "ryandgoldenberg1/svrg_project",
+    "url": "https://github.com/svrg_project",
+    "python_version": "3.5",
+    "requirements": {
+        "req_file": "requirements.txt",
+        "pip": [],
+        "others": []
+    },
+    "to_run": {
+        "decision": true,
+        "reason": null
+    },
+    "entries": [
+        {
+            "cmd": "python train.py --seed 63 --optimizer SGD --dataset MNIST --dataset_size 1000 --run_name sgd --output_path sgd.json --layer_sizes 784 10 --batch_size 1 --learning_rate 0.1 --weight_decay 0.001 --num_epochs 20 --download",
+            "main": "train.py",
+            "steps": [
+                "data-download",
+                "data-preparation",
+                "training",
+                "testing"
+            ],
+            "args_lib": "argparse",
+            "args": [
+                {
+                    "names": [
+                        "--seed"
+                    ],
+                    "input": true,
+                    "dest": "seed",
+                    "ex_has_default": false,
+                    "default": null,
+                    "type": "float",
+                    "mandatory": false
+                },
+                {
+                    "names": [
+                        "--optimizer"
+                    ],
+                    "input": true,
+                    "dest": "optimizer",
+                    "ex_has_default": false,
+                    "default": null,
+                    "type": "float",
+                    "mandatory": true
+                },
+                {
+                    "names": [
+                        "--run_name"
+                    ],
+                    "input": true,
+                    "dest": "run_name",
+                    "ex_has_default": true,
+                    "default": "train",
+                    "type": "str",
+                    "mandatory": false
+                },
+                {
+                    "names": [
+                        "--output_path"
+                    ],
+                    "input": true,
+                    "dest": "output_path",
+                    "ex_has_default": false,
+                    "default": null,
+                    "type": "float",
+                    "mandatory": false
+                },
+                {
+                    "names": [
+                        "--device"
+                    ],
+                    "input": true,
+                    "dest": "device",
+                    "ex_has_default": true,
+                    "default": "cpu",
+                    "type": "str",
+                    "mandatory": false
+                },
+                {
+                    "names": [
+                        "--dataset"
+                    ],
+                    "input": true,
+                    "dest": "dataset",
+                    "ex_has_default": true,
+                    "default": "MNIST",
+                    "type": "str",
+                    "mandatory": false
+                },
+                {
+                    "names": [
+                        "--dataset_root"
+                    ],
+                    "input": true,
+                    "dest": "dataset_root",
+                    "ex_has_default": true,
+                    "default": "./datasets/pytorch",
+                    "type": "str",
+                    "mandatory": false
+                },
+                {
+                    "names": [
+                        "--dataset_size"
+                    ],
+                    "input": true,
+                    "dest": "dataset_size",
+                    "ex_has_default": false,
+                    "default": null,
+                    "type": "float",
+                    "mandatory": false
+                },
+                {
+                    "names": [
+                        "--download"
+                    ],
+                    "input": false,
+                    "dest": "download",
+                    "ex_has_default": true,
+                    "default": false,
+                    "type": "float",
+                    "mandatory": false
+                },
+                {
+                    "names": [
+                        "--layer_sizes"
+                    ],
+                    "input": true,
+                    "dest": "layer_sizes",
+                    "ex_has_default": true,
+                    "default": [
+                        784,
+                        10
+                    ],
+                    "type": "float",
+                    "mandatory": false
+                },
+                {
+                    "names": [
+                        "--batch_size"
+                    ],
+                    "input": true,
+                    "dest": "batch_size",
+                    "ex_has_default": true,
+                    "default": 1,
+                    "type": "float",
+                    "mandatory": false
+                },
+                {
+                    "names": [
+                        "--test_batch_size"
+                    ],
+                    "input": true,
+                    "dest": "test_batch_size",
+                    "ex_has_default": true,
+                    "default": 256,
+                    "type": "float",
+                    "mandatory": false
+                },
+                {
+                    "names": [
+                        "--learning_rate"
+                    ],
+                    "input": true,
+                    "dest": "learning_rate",
+                    "ex_has_default": true,
+                    "default": 0.025,
+                    "type": "float",
+                    "mandatory": false
+                },
+                {
+                    "names": [
+                        "--weight_decay"
+                    ],
+                    "input": true,
+                    "dest": "weight_decay",
+                    "ex_has_default": true,
+                    "default": 0.0001,
+                    "type": "float",
+                    "mandatory": false
+                },
+                {
+                    "names": [
+                        "--warmup_learning_rate"
+                    ],
+                    "input": true,
+                    "dest": "warmup_learning_rate",
+                    "ex_has_default": true,
+                    "default": 0.01,
+                    "type": "float",
+                    "mandatory": false
+                },
+                {
+                    "names": [
+                        "--num_warmup_epochs"
+                    ],
+                    "input": true,
+                    "dest": "num_warmup_epochs",
+                    "ex_has_default": true,
+                    "default": 10,
+                    "type": "float",
+                    "mandatory": false
+                },
+                {
+                    "names": [
+                        "--num_outer_epochs"
+                    ],
+                    "input": true,
+                    "dest": "num_outer_epochs",
+                    "ex_has_default": true,
+                    "default": 100,
+                    "type": "float",
+                    "mandatory": false
+                },
+                {
+                    "names": [
+                        "--num_inner_epochs"
+                    ],
+                    "input": true,
+                    "dest": "num_inner_epochs",
+                    "ex_has_default": true,
+                    "default": 5,
+                    "type": "float",
+                    "mandatory": false
+                },
+                {
+                    "names": [
+                        "--inner_epoch_fraction"
+                    ],
+                    "input": true,
+                    "dest": "inner_epoch_fraction",
+                    "ex_has_default": false,
+                    "default": null,
+                    "type": "float",
+                    "mandatory": false
+                },
+                {
+                    "names": [
+                        "--choose_random_iterate"
+                    ],
+                    "input": false,
+                    "dest": "choose_random_iterate",
+                    "ex_has_default": true,
+                    "default": false,
+                    "type": "float",
+                    "mandatory": false
+                },
+                {
+                    "names": [
+                        "--num_epochs"
+                    ],
+                    "input": true,
+                    "dest": "num_epochs",
+                    "ex_has_default": true,
+                    "default": 10,
+                    "type": "float",
+                    "mandatory": false
+                }
+            ],
+            "ins": [
+                {
+                    "type": "dir",
+                    "location": "~/datasets/pytorch",
+                    "artifact": "dataset",
+                    "ex_from": "cmd",
+                    "ex_in_repo": false
+                }
+            ],
+            "outs": [
+                {
+                    "type": "dir",
+                    "location": "~/datasets/pytorch",
+                    "artifact": "dataset",
+                    "ex_from": "cmd",
+                    "ex_in_repo": false
+                },
+                {
+                    "type": "file",
+                    "location": "sgd.json",
+                    "artifact": "metrics",
+                    "ex_from": "cmd",
+                    "ex_in_repo": false
+                }
+            ]
+        }
+    ],
+    "ex_metrics": {
+        "metrics_files": [
+            {
+                "file_name": "sgd.json",
+                "metrics": [
+                    "train_loss",
+                    "test_error",
+                    "epoch",
+                    "grad_norm"
+                ]
+            }
+        ],
+        "prints": [
+            "train_loss",
+            "grad_norm",
+            "test_error"
+        ],
+        "plots": [
+            "train_loss",
+            "grad_norm",
+            "test_error"
+        ],
+        "others": []
+    },
+    "ex_hyperparams": {
+        "from_cmd": [
+            "layer_sizes",
+            "num_outer_epochs",
+            "batch_size",
+            "num_warmup_epochs",
+            "learning_rate",
+            "num_epochs",
+            "warmup_learning_rate",
+            "seed",
+            "test_batch_size",
+            "optimizer",
+            "num_inner_epochs",
+            "weight_decay"
+        ],
+        "config_files": [
+            {
+                "name": "sgd.json",
+                "in_repo": false,
+                "hyperparams": [
+                    "layer_sizes",
+                    "num_outer_epochs",
+                    "batch_size",
+                    "num_warmup_epochs",
+                    "learning_rate",
+                    "num_epochs",
+                    "warmup_learning_rate",
+                    "seed",
+                    "test_batch_size",
+                    "optimizer",
+                    "num_inner_epochs",
+                    "weight_decay"
+                ]
+            }
+        ],
+        "in_code": [],
+        "others": []
+    }
+}
