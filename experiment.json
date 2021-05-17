@@ -13,7 +13,7 @@
     },
     "entries": [
         {
-            "cmd": "python train.py --seed 63 --optimizer SGD --dataset MNIST --dataset_size 1000 --run_name sgd --output_path sgd.json --layer_sizes 784 10 --batch_size 1 --learning_rate 0.1 --weight_decay 0.001 --num_epochs 20 --download",
+            "cmd": "python train.py --seed 63 --device cuda --optimizer SGD --dataset MNIST --dataset_size 1000 --run_name sgd --output_path sgd.json --layer_sizes 784 10 --batch_size 1 --learning_rate 0.1 --weight_decay 0.001 --num_epochs 20 --download",
             "main": "train.py",
             "steps": [
                 "data-download",
@@ -261,7 +261,7 @@
             "ins": [
                 {
                     "type": "dir",
-                    "location": "~/datasets/pytorch",
+                    "location": "./datasets/pytorch",
                     "artifact": "dataset",
                     "ex_from": "cmd",
                     "ex_in_repo": false
@@ -270,7 +270,7 @@
             "outs": [
                 {
                     "type": "dir",
-                    "location": "~/datasets/pytorch",
+                    "location": "./datasets/pytorch",
                     "artifact": "dataset",
                     "ex_from": "cmd",
                     "ex_in_repo": false

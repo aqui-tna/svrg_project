@@ -93,7 +93,7 @@ def main():
     # Dataset Args
     group = parser.add_argument_group('dataset arguments')
     group.add_argument('--dataset', default='MNIST', choices=['MNIST', 'CIFAR10', 'STL10', 'FMNIST'])
-    group.add_argument('--dataset_root', default='~/datasets/pytorch')
+    group.add_argument('--dataset_root', default='./datasets/pytorch')
     group.add_argument('--dataset_size', type=int)
     group.add_argument('--download', default=False, action='store_true')
     # Common Hyperparameters
